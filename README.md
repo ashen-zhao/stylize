@@ -30,7 +30,7 @@ This quickly builds into a giant chunk of code that is a pain to read and mainta
 let string          = NSAttributedString(string: "Hello World")
 let foregroundStyle = Stylize.foregroundColor(UIColor.redColor(), range: NSMakeRange(0, 5))
 let underlineStyle  = Stylize.underline(NSUnderlineStyle.StyleSingle)
-let style           = Stylize.combine(foregroundStyle, underlineStyle)
+let style           = Stylize.compose(foregroundStyle, underlineStyle)
 
 let styledString    = style(string)
 ```
@@ -62,9 +62,9 @@ let style         = Stylize.foregroundColor(UIColor.redColor(), range: NSMakeRan
 let styledString  = style(string)
 ```
 
-#### Combining Styles
+#### Composing Styles
 
-stylize has a `combine` function that can combine any number of styles into one:
+stylize has a `compose` function that can compose a style from multiple styles
 
 ```swift
 let string          = NSAttributedString(string: "Hello World")
@@ -72,7 +72,7 @@ let foregroundStyle = Stylize.foregroundColor(UIColor.redColor())
 let backgroundStyle = Stylize.backgroundColor(UIColor.orangeColor())
 let underlineStyle  = Stylize.underline(NSUnderlineStyle.StyleSingle)
 
-let style           = Stylize.combine(foregroundStyle, backgroundStyle, underlineStyle)
+let style           = Stylize.compose(foregroundStyle, backgroundStyle, underlineStyle)
 let styledString    = style(string)
 ```
 

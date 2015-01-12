@@ -99,19 +99,19 @@ class StylizeTests: XCTestCase {
         checkAttributeInRange(NSBaselineOffsetAttributeName, style: style)
     }
 
-    func testStylesAreCombined() {
+    func testStylesAreComposed() {
         let baseline = Stylize.baseline(1)
         let kern = Stylize.kern(1)
-        let style = Stylize.combine(baseline, kern)
+        let style = Stylize.compose(baseline, kern)
 
         checkAttribute(NSBaselineOffsetAttributeName, style: style)
         checkAttribute(NSKernAttributeName, style: style)
     }
 
-    func testStylesAreCombinedInRange() {
+    func testStylesAreComposedInRange() {
         let baseline = Stylize.baseline(1, range: NSMakeRange(0, 1))
         let kern = Stylize.kern(1, range: NSMakeRange(0, 1))
-        let style = Stylize.combine(baseline, kern)
+        let style = Stylize.compose(baseline, kern)
 
         checkAttributeInRange(NSBaselineOffsetAttributeName, style: style)
         checkAttributeInRange(NSKernAttributeName, style: style)

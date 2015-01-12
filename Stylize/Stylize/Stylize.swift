@@ -143,23 +143,23 @@ public class Stylize {
         }
     }
 
-    // MARK: Combine
+    // MARK: Compose
 
     /**
-    Combines style functions into one function that can be used to style an attributed string
+    Compose multiple style functions into one function that can be used to style an attributed string
 
-    :param: styles An unlimted number of StringStyle functions to combine
+    :param: styles An unlimted number of StringStyle functions to compose
 
     :returns: Function that can be called to style an attributed string
     */
-    public class func combine(styles: StringStyle...) -> StringStyle {
-        var combined = styles.first!
+    public class func compose(styles: StringStyle...) -> StringStyle {
+        var composed = styles.first!
         
         for style in styles {
-            combined = combined >>> style
+            composed = composed >>> style
         }
         
-        return combined
+        return composed
     }
 }
 
@@ -185,15 +185,15 @@ extension Stylize {
 // MARK: Overloads
 
 /**
-*  Operator overload to combine functions with >>>
+*  Operator overload to compose functions with >>>
 */
 infix operator >>> { associativity left }
 
 /**
-Combines styles into one style that can be used to style an attributed string
+Compose a style from multiple styles that can be used to style an attributed string
 
-:param: style1 The first style to combine into the second
-:param: style2 The second style to combine into the first
+:param: style1 The first style to compose with
+:param: style2 The second style to compose with
 
 :returns: Function that can be called to style an attributed string
 */
