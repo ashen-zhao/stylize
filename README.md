@@ -11,6 +11,7 @@ A funcitonal wrapper of NSAttributedString for easy string styling
 * [Usage](#usage)
     * [Substrings](#substrings)
     * [Composing Styles](#composing-styles)
+* [Available Attributes](#available-attributes)
 
 ## Why does NSAttributedString need a wrapper?
 
@@ -76,3 +77,18 @@ let style           = Stylize.compose(foregroundStyle, backgroundStyle, underlin
 let styledString    = style(string)
 ```
 
+## Available Attributes
+
+| Attribute  | Function |
+| ------------- | ------------- |
+| NSUnderlineStyleAttributeName  | `underline(style: NSUnderlineStyle)`  |
+| NSStrikethroughStyleAttributeName  | `strikethrough(style: NSUnderlineStyle)`  |
+| NSForegroundColorAttributeName | `foregroundColor(color: UIColor)` |
+| NSBackgroundColorAttributeName | `backgroundColor(color: UIColor` |
+| NSUnderlineColorAttributeName | `underlineColor(color: UIColor)` |
+| NSStrikethroughColorAttributeName | `strikethroughColor(color: UIColor)` |
+| NSLinkAttributeName | `link(url: NSURL)` |
+| NSParagraphStyleAttributeName | `paragraph(style: NSParagraphStyle)` |
+| NSKernAttributeName | `kern(points: NSNumber)` |
+| NSBaselineOffsetAttributeName | `baseline(offset: NSNumber)` |
+| NSShadowAttributeName | `shadow(shadow: NSShadow)` |
