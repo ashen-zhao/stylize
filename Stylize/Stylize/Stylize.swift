@@ -173,6 +173,21 @@ public class Stylize {
         }
     }
 
+    /**
+    Creates a function that will apply a shadow to an attributed string
+
+    :param: shadow An NSShadow object to apply
+    :param: range Optional range of the shadow, an invalid range will result in the shadow being
+                  applied to the entire string
+
+    :returns: Function that can be called to apply a shadow to an attributed string
+    */
+    public class func shadow(shadow: NSShadow, range: NSRange = EmptyRange) -> StringStyle {
+        return { string in
+            return Stylize.apply(NSShadowAttributeName, value: shadow, range: range)(string)
+        }
+    }
+
     // MARK: Compose
 
     /**

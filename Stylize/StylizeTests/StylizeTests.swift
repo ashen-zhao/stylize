@@ -119,6 +119,16 @@ class StylizeTests: XCTestCase {
         checkAttributeInRange(NSStrikethroughColorAttributeName, style: style)
     }
 
+    func testShadowIsAdded() {
+        let style = Stylize.shadow(NSShadow())
+        checkAttribute(NSShadowAttributeName, style: style)
+    }
+
+    func testShadowIsAddedToRange() {
+        let style = Stylize.shadow(NSShadow(), range: NSMakeRange(0, 1))
+        checkAttributeInRange(NSShadowAttributeName, style: style)
+    }
+
     func testStylesAreComposed() {
         let baseline = Stylize.baseline(1)
         let kern = Stylize.kern(1)
