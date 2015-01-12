@@ -99,6 +99,26 @@ class StylizeTests: XCTestCase {
         checkAttributeInRange(NSBaselineOffsetAttributeName, style: style)
     }
 
+    func testStrikethroughIsAdded() {
+        let style = Stylize.strikethrough(NSUnderlineStyle.PatternDash)
+        checkAttribute(NSStrikethroughStyleAttributeName, style: style)
+    }
+
+    func testStrikethroughIsAddedToARange() {
+        let style = Stylize.strikethrough(NSUnderlineStyle.PatternDash, range: NSMakeRange(0, 1))
+        checkAttributeInRange(NSStrikethroughStyleAttributeName, style: style)
+    }
+
+    func testStrikethroughColorIsAdded() {
+        let style = Stylize.strikethroughColor(UIColor.redColor())
+        checkAttribute(NSStrikethroughColorAttributeName, style: style)
+    }
+
+    func testStrikethroughColorIsAddedtoARange() {
+        let style = Stylize.strikethroughColor(UIColor.redColor(), range: NSMakeRange(0, 1))
+        checkAttributeInRange(NSStrikethroughColorAttributeName, style: style)
+    }
+
     func testStylesAreComposed() {
         let baseline = Stylize.baseline(1)
         let kern = Stylize.kern(1)

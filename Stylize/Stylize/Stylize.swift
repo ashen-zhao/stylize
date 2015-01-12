@@ -39,6 +39,21 @@ public class Stylize {
     }
 
     /**
+    Creates a function that will strikethrough an attributed string
+
+    :param: style The NSUnderlineStyle to strikethrough with
+    :param: range Optional range of the strikethrough, an invalid range will result in the
+    entire string being striked through
+
+    :returns: Function that can be called to strikthrough an attributed string
+    */
+    public class func strikethrough(style: NSUnderlineStyle, range: NSRange = EmptyRange) -> StringStyle {
+        return { string in
+            return Stylize.apply(NSStrikethroughStyleAttributeName, value: style.rawValue, range: range)(string)
+        }
+    }
+
+    /**
     Creates a function that will change the foreground color of an attributed string
 
     :param: color The UIColor to use when styling a string
@@ -80,6 +95,21 @@ public class Stylize {
     public class func underlineColor(color: UIColor, range: NSRange = EmptyRange) -> StringStyle {
         return { string in
             return Stylize.apply(NSUnderlineColorAttributeName, value: color, range: range)(string)
+        }
+    }
+
+    /**
+    Creates a function that will change the strikethrough color of an attributed string
+
+    :param: color The UIColor to use when styling the string
+    :param: range Optional range of the color, an invalid range will result in the
+    entire string strikethrough being colored
+
+    :returns: Function that can be called to change the strikethrough color of an attributed string
+    */
+    public class func strikethroughColor(color: UIColor, range: NSRange = EmptyRange) -> StringStyle {
+        return { string in
+            return Stylize.apply(NSStrikethroughColorAttributeName, value: color, range: range)(string)
         }
     }
 
