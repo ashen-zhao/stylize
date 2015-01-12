@@ -10,7 +10,7 @@ A funcitonal wrapper of NSAttributedString for easy string styling
 * [Setup](#setup)
 * [Usage](#usage)
     * [Substrings](#substrings)
-    * [Combining Styles](#combining-styles)
+    * [Composing Styles](#composing-styles)
 
 ## Why does NSAttributedString need a wrapper?
 
