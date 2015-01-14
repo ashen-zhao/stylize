@@ -108,3 +108,4 @@ let styledString    = style(string)
 | NSShadowAttributeName | `shadow(shadow: NSShadow)` |
 | NSStrokeWidthAttributeName| `stroke(width: NSNumber)` |
 | NSStrokeColorAttributeName | `stroke(color: UIColor)` |
+| NSTextEffectAttributeName | `letterpress()` |

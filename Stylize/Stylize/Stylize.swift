@@ -218,6 +218,20 @@ public class Stylize {
         }
     }
 
+    /**
+    Creates a function that will apply a letterpress effect to an attributed string
+
+    :param: range Optional range of the letterpress effect, an invalid range will result
+                  in a letterpress effect being applied to the entire string
+
+    :returns: Function that can be called to apply letterpress effect to an attributed string
+    */
+    public class func letterpress(range: NSRange = EmptyRange) -> StringStyle {
+        return { string in
+            return self.apply(NSTextEffectAttributeName, value: NSTextEffectLetterpressStyle, range: range)(string)
+        }
+    }
+
     // MARK: Compose
 
     /**

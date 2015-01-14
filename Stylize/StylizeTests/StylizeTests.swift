@@ -150,6 +150,16 @@ class StylizeTests: XCTestCase {
         checkAttributeInRange(NSStrokeColorAttributeName, style: style)
     }
 
+    func testLetterpressIsAdded() {
+        let style = Stylize.letterpress()
+        checkAttribute(NSTextEffectAttributeName, style: style)
+    }
+
+    func testLetterpressIsAddedToRange() {
+        let style = Stylize.letterpress(range: range)
+        checkAttributeInRange(NSTextEffectAttributeName, style: style)
+    }
+
     func testStylesAreComposed() {
         let baseline = Stylize.baseline(1)
         let kern = Stylize.kern(1)
