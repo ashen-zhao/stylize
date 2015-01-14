@@ -109,3 +109,4 @@ let styledString    = style(string)
 | NSStrokeWidthAttributeName| `stroke(width: NSNumber)` |
 | NSStrokeColorAttributeName | `stroke(color: UIColor)` |
 | NSTextEffectAttributeName | `letterpress()` |
+| NSFontAttributeName | `font(font: UIFont)` |

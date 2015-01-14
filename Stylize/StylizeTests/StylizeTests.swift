@@ -160,6 +160,16 @@ class StylizeTests: XCTestCase {
         checkAttributeInRange(NSTextEffectAttributeName, style: style)
     }
 
+    func testFontIsAdded() {
+        let style = Stylize.font(UIFont.boldSystemFontOfSize(10))
+        checkAttribute(NSFontAttributeName, style: style)
+    }
+
+    func testFontIsAddedToRange() {
+        let style = Stylize.font(UIFont.boldSystemFontOfSize(10), range: range)
+        checkAttributeInRange(NSFontAttributeName, style: style)
+    }
+
     func testStylesAreComposed() {
         let baseline = Stylize.baseline(1)
         let kern = Stylize.kern(1)

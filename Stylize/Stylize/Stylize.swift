@@ -232,6 +232,21 @@ public class Stylize {
         }
     }
 
+    /**
+    Creates a function that will apply a font to an attributed string
+
+    :param: font  The font to apply
+    :param: range Optional range of the font, an invalid range will result
+                  in the font being applied to the entire string
+
+    :returns: Function that can be called to apply a font to an attributed string
+    */
+    public class func font(font: UIFont, range: NSRange = EmptyRange) -> StringStyle {
+        return { string in
+            return self.apply(NSFontAttributeName, value: font, range: range)(string)
+        }
+    }
+
     // MARK: Compose
 
     /**
