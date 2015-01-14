@@ -177,14 +177,44 @@ public class Stylize {
     Creates a function that will apply a shadow to an attributed string
 
     :param: shadow An NSShadow object to apply
-    :param: range Optional range of the shadow, an invalid range will result in the shadow being
-                  applied to the entire string
+    :param: range Optional range of the shadow, an invalid range will result
+                  in the shadow being applied to the entire string
 
     :returns: Function that can be called to apply a shadow to an attributed string
     */
     public class func shadow(shadow: NSShadow, range: NSRange = EmptyRange) -> StringStyle {
         return { string in
             return self.apply(NSShadowAttributeName, value: shadow, range: range)(string)
+        }
+    }
+
+    /**
+    Creates a function that will apply a stroke color to an attribute string
+
+    :param: color The color to apply
+    :param: range Optional range of the color, an invalid range will result
+                  in the color being applied to the entire string
+
+    :returns: Function that can be called to apply a stroke color to an attributed string
+    */
+    public class func stroke(color: UIColor, range: NSRange = EmptyRange) -> StringStyle {
+        return { string in
+            return self.apply(NSStrokeColorAttributeName, value: color, range: range)(string)
+        }
+    }
+
+    /**
+    Creates a function that will apply a stroke width to an attributed string
+
+    :param: width The stroke width to apply
+    :param: range Optional range of the stroke width, an invalid range will result
+                  in the stroke width being applied to the entire string
+
+    :returns: Function that can be called to apply a stroke width to an attributed string
+    */
+    public class func stroke(width: NSNumber, range: NSRange = EmptyRange) -> StringStyle {
+        return { string in
+            return self.apply(NSStrokeWidthAttributeName, value: width, range: range)(string)
         }
     }
 

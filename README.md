@@ -106,3 +106,5 @@ let styledString    = style(string)
 | NSKernAttributeName | `kern(points: NSNumber)` |
 | NSBaselineOffsetAttributeName | `baseline(offset: NSNumber)` |
 | NSShadowAttributeName | `shadow(shadow: NSShadow)` |
+| NSStrokeWidthAttributeName| `stroke(width: NSNumber)` |
+| NSStrokeColorAttributeName | `stroke(color: UIColor)` |

@@ -13,6 +13,7 @@ import Stylize
 class StylizeTests: XCTestCase {
 
     var string: NSAttributedString?
+    let range = NSMakeRange(0, 1)
 
     override func setUp() {
         super.setUp()
@@ -25,7 +26,7 @@ class StylizeTests: XCTestCase {
     }
 
     func testUnderlineAttibuteIsAddedToARange() {
-        let style = Stylize.underline(NSUnderlineStyle.StyleSingle, range: NSMakeRange(0, 1))
+        let style = Stylize.underline(NSUnderlineStyle.StyleSingle, range: range)
         checkAttributeInRange(NSUnderlineStyleAttributeName, style: style)
     }
 
@@ -35,7 +36,7 @@ class StylizeTests: XCTestCase {
     }
 
     func testForegroundColorIsAddedToARange() {
-        let style = Stylize.foreground(UIColor.redColor(), range: NSMakeRange(0, 1))
+        let style = Stylize.foreground(UIColor.redColor(), range: range)
         checkAttributeInRange(NSForegroundColorAttributeName, style: style)
     }
 
@@ -45,7 +46,7 @@ class StylizeTests: XCTestCase {
     }
 
     func testBackgroundColorIsAddedToARange() {
-        let style = Stylize.background(UIColor.redColor(), range: NSMakeRange(0, 1))
+        let style = Stylize.background(UIColor.redColor(), range: range)
         checkAttributeInRange(NSBackgroundColorAttributeName, style: style)
     }
 
@@ -55,7 +56,7 @@ class StylizeTests: XCTestCase {
     }
 
     func testUnderlineColorIsAddedToARange() {
-        let style = Stylize.underline(UIColor.redColor(), range: NSMakeRange(0, 1))
+        let style = Stylize.underline(UIColor.redColor(), range: range)
         checkAttributeInRange(NSUnderlineColorAttributeName, style: style)
     }
 
@@ -65,7 +66,7 @@ class StylizeTests: XCTestCase {
     }
 
     func testLinkIsAddedToARange() {
-        let style = Stylize.link(NSURL(string: "")!, range: NSMakeRange(0, 1))
+        let style = Stylize.link(NSURL(string: "")!, range: range)
         checkAttributeInRange(NSLinkAttributeName, style: style)
     }
 
@@ -75,7 +76,7 @@ class StylizeTests: XCTestCase {
     }
 
     func testParagraphIsAddedToARange() {
-        let style = Stylize.paragraph(NSParagraphStyle(), range: NSMakeRange(0, 1))
+        let style = Stylize.paragraph(NSParagraphStyle(), range: range)
         checkAttributeInRange(NSParagraphStyleAttributeName, style: style)
     }
 
@@ -85,7 +86,7 @@ class StylizeTests: XCTestCase {
     }
 
     func testKernIsAddedToARange() {
-        let style = Stylize.kern(1, range: NSMakeRange(0, 1))
+        let style = Stylize.kern(1, range: range)
         checkAttributeInRange(NSKernAttributeName, style: style)
     }
 
@@ -95,7 +96,7 @@ class StylizeTests: XCTestCase {
     }
 
     func testBaselineIsAddedToARange() {
-        let style = Stylize.baseline(1, range: NSMakeRange(0, 1))
+        let style = Stylize.baseline(1, range: range)
         checkAttributeInRange(NSBaselineOffsetAttributeName, style: style)
     }
 
@@ -105,7 +106,7 @@ class StylizeTests: XCTestCase {
     }
 
     func testStrikethroughIsAddedToARange() {
-        let style = Stylize.strikethrough(NSUnderlineStyle.PatternDash, range: NSMakeRange(0, 1))
+        let style = Stylize.strikethrough(NSUnderlineStyle.PatternDash, range: range)
         checkAttributeInRange(NSStrikethroughStyleAttributeName, style: style)
     }
 
@@ -115,7 +116,7 @@ class StylizeTests: XCTestCase {
     }
 
     func testStrikethroughColorIsAddedtoARange() {
-        let style = Stylize.strikethrough(UIColor.redColor(), range: NSMakeRange(0, 1))
+        let style = Stylize.strikethrough(UIColor.redColor(), range: range)
         checkAttributeInRange(NSStrikethroughColorAttributeName, style: style)
     }
 
@@ -125,8 +126,28 @@ class StylizeTests: XCTestCase {
     }
 
     func testShadowIsAddedToRange() {
-        let style = Stylize.shadow(NSShadow(), range: NSMakeRange(0, 1))
+        let style = Stylize.shadow(NSShadow(), range: range)
         checkAttributeInRange(NSShadowAttributeName, style: style)
+    }
+
+    func testStrokeWidthIsAdded() {
+        let style = Stylize.stroke(1)
+        checkAttribute(NSStrokeWidthAttributeName, style: style)
+    }
+
+    func testStrokeWidthIsAddedToRange() {
+        let style = Stylize.stroke(1, range: range)
+        checkAttributeInRange(NSStrokeWidthAttributeName, style: style)
+    }
+
+    func testStrokeColorIsAdded() {
+        let style = Stylize.stroke(UIColor.redColor())
+        checkAttribute(NSStrokeColorAttributeName, style: style)
+    }
+
+    func testStrokeColorIsAddedToRange() {
+        let style = Stylize.stroke(UIColor.redColor(), range: range)
+        checkAttributeInRange(NSStrokeColorAttributeName, style: style)
     }
 
     func testStylesAreComposed() {
@@ -139,8 +160,8 @@ class StylizeTests: XCTestCase {
     }
 
     func testStylesAreComposedInRange() {
-        let baseline = Stylize.baseline(1, range: NSMakeRange(0, 1))
-        let kern = Stylize.kern(1, range: NSMakeRange(0, 1))
+        let baseline = Stylize.baseline(1, range: range)
+        let kern = Stylize.kern(1, range: range)
         let style = Stylize.compose(baseline, kern)
 
         checkAttributeInRange(NSBaselineOffsetAttributeName, style: style)
@@ -161,7 +182,7 @@ extension StylizeTests {
     func checkAttributeInRange(name: AttributeName, style: StringStyle) {
         let testString  = style(string!)
 
-        var found    = attributeFound(name, string: testString, range: NSMakeRange(0, 1))
+        var found    = attributeFound(name, string: testString, range: range)
         var notFound = attributeFound(name, string: testString, range: NSMakeRange(1, 5))
 
         XCTAssertTrue(found, "\(name) attribute was not added at the correct range")
