@@ -92,7 +92,7 @@ public class Stylize {
 
     :returns: Function that can be called to change the underline color of an attributed string
     */
-    public class func underlineColor(color: UIColor, range: NSRange = EmptyRange) -> StringStyle {
+    public class func underline(color: UIColor, range: NSRange = EmptyRange) -> StringStyle {
         return { string in
             return Stylize.apply(NSUnderlineColorAttributeName, value: color, range: range)(string)
         }

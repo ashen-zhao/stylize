@@ -50,12 +50,12 @@ class StylizeTests: XCTestCase {
     }
 
     func testUnderlineColorIsAdded() {
-        let style = Stylize.underlineColor(UIColor.redColor())
+        let style = Stylize.underline(UIColor.redColor())
         checkAttribute(NSUnderlineColorAttributeName, style: style)
     }
 
     func testUnderlineColorIsAddedToARange() {
-        let style = Stylize.underlineColor(UIColor.redColor(), range: NSMakeRange(0, 1))
+        let style = Stylize.underline(UIColor.redColor(), range: NSMakeRange(0, 1))
         checkAttributeInRange(NSUnderlineColorAttributeName, style: style)
     }
 

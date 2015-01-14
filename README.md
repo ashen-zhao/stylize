@@ -99,7 +99,7 @@ let styledString    = style(string)
 | NSStrikethroughStyleAttributeName  | `strikethrough(style: NSUnderlineStyle)`  |
 | NSforegroundAttributeName | `foreground(color: UIColor)` |
 | NSbackgroundAttributeName | `background(color: UIColor` |
-| NSUnderlineColorAttributeName | `underlineColor(color: UIColor)` |
+| NSUnderlineColorAttributeName | `underline(color: UIColor)` |
 | NSStrikethroughColorAttributeName | `strikethroughColor(color: UIColor)` |
 | NSLinkAttributeName | `link(url: NSURL)` |
 | NSParagraphStyleAttributeName | `paragraph(style: NSParagraphStyle)` |
