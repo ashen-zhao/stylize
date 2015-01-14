@@ -30,22 +30,22 @@ class StylizeTests: XCTestCase {
     }
 
     func testForegroundColorIsAdded() {
-        let style = Stylize.foregroundColor(UIColor.redColor())
+        let style = Stylize.foreground(UIColor.redColor())
         checkAttribute(NSForegroundColorAttributeName, style: style)
     }
 
     func testForegroundColorIsAddedToARange() {
-        let style = Stylize.foregroundColor(UIColor.redColor(), range: NSMakeRange(0, 1))
+        let style = Stylize.foreground(UIColor.redColor(), range: NSMakeRange(0, 1))
         checkAttributeInRange(NSForegroundColorAttributeName, style: style)
     }
 
     func testBackgroundColorIsAdded() {
-        let style = Stylize.backgroundColor(UIColor.redColor())
+        let style = Stylize.background(UIColor.redColor())
         checkAttribute(NSBackgroundColorAttributeName, style: style)
     }
 
     func testBackgroundColorIsAddedToARange() {
-        let style = Stylize.backgroundColor(UIColor.redColor(), range: NSMakeRange(0, 1))
+        let style = Stylize.background(UIColor.redColor(), range: NSMakeRange(0, 1))
         checkAttributeInRange(NSBackgroundColorAttributeName, style: style)
     }
 

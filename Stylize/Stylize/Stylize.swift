@@ -62,7 +62,7 @@ public class Stylize {
 
     :returns: Function that can be called to change the foreground color of an attributed string
     */
-    public class func foregroundColor(color: UIColor, range: NSRange = EmptyRange) -> StringStyle {
+    public class func foreground(color: UIColor, range: NSRange = EmptyRange) -> StringStyle {
         return { string in
             return Stylize.apply(NSForegroundColorAttributeName, value: color, range: range)(string)
         }
@@ -77,7 +77,7 @@ public class Stylize {
 
     :returns: Function that can be called to change the background color of an attributed string
     */
-    public class func backgroundColor(color: UIColor, range: NSRange = EmptyRange) -> StringStyle {
+    public class func background(color: UIColor, range: NSRange = EmptyRange) -> StringStyle {
         return { string in
             return Stylize.apply(NSBackgroundColorAttributeName, value: color, range: range)(string)
         }
