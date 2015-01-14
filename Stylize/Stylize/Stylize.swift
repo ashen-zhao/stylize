@@ -107,7 +107,7 @@ public class Stylize {
 
     :returns: Function that can be called to change the strikethrough color of an attributed string
     */
-    public class func strikethroughColor(color: UIColor, range: NSRange = EmptyRange) -> StringStyle {
+    public class func strikethrough(color: UIColor, range: NSRange = EmptyRange) -> StringStyle {
         return { string in
             return Stylize.apply(NSStrikethroughColorAttributeName, value: color, range: range)(string)
         }

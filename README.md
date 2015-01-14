@@ -96,11 +96,11 @@ let styledString    = style(string)
 | Attribute  | Function |
 | ------------- | ------------- |
 | NSUnderlineStyleAttributeName  | `underline(style: NSUnderlineStyle)`  |
-| NSStrikethroughStyleAttributeName  | `strikethrough(style: NSUnderlineStyle)`  |
-| NSforegroundAttributeName | `foreground(color: UIColor)` |
-| NSbackgroundAttributeName | `background(color: UIColor` |
 | NSUnderlineColorAttributeName | `underline(color: UIColor)` |
-| NSStrikethroughColorAttributeName | `strikethroughColor(color: UIColor)` |
+| NSForegroundColorAttributeName | `foreground(color: UIColor)` |
+| NSBackgroundColorAttributeName | `background(color: UIColor` |
+| NSStrikethroughStyleAttributeName  | `strikethrough(style: NSUnderlineStyle)`  |
+| NSStrikethroughColorAttributeName | `strikethrough(color: UIColor)` |
 | NSLinkAttributeName | `link(url: NSURL)` |
 | NSParagraphStyleAttributeName | `paragraph(style: NSParagraphStyle)` |
 | NSKernAttributeName | `kern(points: NSNumber)` |

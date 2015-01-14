@@ -110,12 +110,12 @@ class StylizeTests: XCTestCase {
     }
 
     func testStrikethroughColorIsAdded() {
-        let style = Stylize.strikethroughColor(UIColor.redColor())
+        let style = Stylize.strikethrough(UIColor.redColor())
         checkAttribute(NSStrikethroughColorAttributeName, style: style)
     }
 
     func testStrikethroughColorIsAddedtoARange() {
-        let style = Stylize.strikethroughColor(UIColor.redColor(), range: NSMakeRange(0, 1))
+        let style = Stylize.strikethrough(UIColor.redColor(), range: NSMakeRange(0, 1))
         checkAttributeInRange(NSStrikethroughColorAttributeName, style: style)
     }
 
