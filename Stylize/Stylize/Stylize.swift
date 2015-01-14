@@ -34,7 +34,7 @@ public class Stylize {
     */
     public class func underline(style: NSUnderlineStyle, range: NSRange = EmptyRange) -> StringStyle {
         return { string in
-            return Stylize.apply(NSUnderlineStyleAttributeName, value: style.rawValue, range: range)(string)
+            return self.apply(NSUnderlineStyleAttributeName, value: style.rawValue, range: range)(string)
         }
     }
 
@@ -49,7 +49,7 @@ public class Stylize {
     */
     public class func strikethrough(style: NSUnderlineStyle, range: NSRange = EmptyRange) -> StringStyle {
         return { string in
-            return Stylize.apply(NSStrikethroughStyleAttributeName, value: style.rawValue, range: range)(string)
+            return self.apply(NSStrikethroughStyleAttributeName, value: style.rawValue, range: range)(string)
         }
     }
 
@@ -64,7 +64,7 @@ public class Stylize {
     */
     public class func foreground(color: UIColor, range: NSRange = EmptyRange) -> StringStyle {
         return { string in
-            return Stylize.apply(NSForegroundColorAttributeName, value: color, range: range)(string)
+            return self.apply(NSForegroundColorAttributeName, value: color, range: range)(string)
         }
     }
 
@@ -79,7 +79,7 @@ public class Stylize {
     */
     public class func background(color: UIColor, range: NSRange = EmptyRange) -> StringStyle {
         return { string in
-            return Stylize.apply(NSBackgroundColorAttributeName, value: color, range: range)(string)
+            return self.apply(NSBackgroundColorAttributeName, value: color, range: range)(string)
         }
     }
 
@@ -94,7 +94,7 @@ public class Stylize {
     */
     public class func underline(color: UIColor, range: NSRange = EmptyRange) -> StringStyle {
         return { string in
-            return Stylize.apply(NSUnderlineColorAttributeName, value: color, range: range)(string)
+            return self.apply(NSUnderlineColorAttributeName, value: color, range: range)(string)
         }
     }
 
@@ -109,7 +109,7 @@ public class Stylize {
     */
     public class func strikethrough(color: UIColor, range: NSRange = EmptyRange) -> StringStyle {
         return { string in
-            return Stylize.apply(NSStrikethroughColorAttributeName, value: color, range: range)(string)
+            return self.apply(NSStrikethroughColorAttributeName, value: color, range: range)(string)
         }
     }
 
@@ -124,7 +124,7 @@ public class Stylize {
     */
     public class func link(url: NSURL, range: NSRange = EmptyRange) -> StringStyle {
         return { string in
-            return Stylize.apply(NSLinkAttributeName, value: url, range: range)(string)
+            return self.apply(NSLinkAttributeName, value: url, range: range)(string)
         }
     }
 
@@ -139,7 +139,7 @@ public class Stylize {
     */
     public class func paragraph(style: NSParagraphStyle, range: NSRange = EmptyRange) -> StringStyle {
         return { string in
-            return Stylize.apply(NSParagraphStyleAttributeName, value: style, range: range)(string)
+            return self.apply(NSParagraphStyleAttributeName, value: style, range: range)(string)
         }
     }
 
@@ -154,7 +154,7 @@ public class Stylize {
     */
     public class func kern(points: NSNumber, range: NSRange = EmptyRange) -> StringStyle {
         return { string in
-            return Stylize.apply(NSKernAttributeName, value: points, range: range)(string)
+            return self.apply(NSKernAttributeName, value: points, range: range)(string)
         }
     }
 
@@ -169,7 +169,7 @@ public class Stylize {
     */
     public class func baseline(offset: NSNumber, range: NSRange = EmptyRange) -> StringStyle {
         return { string in
-            return Stylize.apply(NSBaselineOffsetAttributeName, value: offset, range: range)(string)
+            return self.apply(NSBaselineOffsetAttributeName, value: offset, range: range)(string)
         }
     }
 
@@ -184,7 +184,7 @@ public class Stylize {
     */
     public class func shadow(shadow: NSShadow, range: NSRange = EmptyRange) -> StringStyle {
         return { string in
-            return Stylize.apply(NSShadowAttributeName, value: shadow, range: range)(string)
+            return self.apply(NSShadowAttributeName, value: shadow, range: range)(string)
         }
     }
 
