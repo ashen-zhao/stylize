@@ -180,6 +180,16 @@ class StylizeTests: XCTestCase {
         checkAttributeInRange(NSLigatureAttributeName, style: style)
     }
 
+    func testObliquenessIsAdded() {
+        let style = Stylize.obliqueness(1)
+        checkAttribute(NSObliquenessAttributeName, style: style)
+    }
+
+    func testObliquenessIsAddedToRange() {
+        let style = Stylize.obliqueness(1, range: range)
+        checkAttributeInRange(NSObliquenessAttributeName, style: style)
+    }
+
     func testStylesAreComposed() {
         let baseline = Stylize.baseline(1)
         let kern = Stylize.kern(1)

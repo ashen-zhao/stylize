@@ -111,3 +111,4 @@ let styledString    = style(string)
 | NSTextEffectAttributeName | `letterpress()` |
 | NSFontAttributeName | `font(font: UIFont)` |
 | NSLigatureAttributeName | `ligatures(enabled: Bool)` |
+| NSObliquenessAttributeName | `obliqueness(skew: NSNumber)` |

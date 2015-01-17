@@ -262,6 +262,21 @@ public class Stylize {
         }
     }
 
+    /**
+    Creates a function that will alter the obliqueness of an attributed string
+
+    :param: skew  The amount of skew to apply to glyphs
+    :param: range   Optional range of the obliqueness, an invalid range will result
+                    in the obliqueness being applied to the entire string
+
+    :returns: Function that can be called to alter the obliqueness of an attributed string
+    */
+    public class func obliqueness(skew: NSNumber, range: NSRange = EmptyRange) -> StringStyle {
+        return { string in
+            return self.apply(NSObliquenessAttributeName, value: skew, range: range)(string)
+        }
+    }
+
     // MARK: Compose
 
     /**
