@@ -113,3 +113,4 @@ let styledString    = style(string)
 | NSLigatureAttributeName | `ligatures(enabled: Bool)` |
 | NSObliquenessAttributeName | `obliqueness(skew: NSNumber)` |
 | NSAttachmentAttributeName | `attachment(attachement: NSTextAttachment)` |
+| NSExpansionAttributeName | `expand(log: NSNumber)` |

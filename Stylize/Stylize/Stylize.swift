@@ -292,6 +292,21 @@ public class Stylize {
         }
     }
 
+    /**
+    Creates a function that will expand an attributed string
+
+    :param: log   The log of the expansion factor
+    :param: range   Optional range of the expansion, an invalid range will result
+                    in the expansion being applied to the entire string
+
+    :returns: Function that can be called to expand an attributed string
+    */
+    public class func expand(log: NSNumber, range: NSRange = EmptyRange) -> StringStyle {
+        return { string in
+            return self.apply(NSExpansionAttributeName, value: log, range: range)(string)
+        }
+    }
+
     // MARK: Compose
 
     /**

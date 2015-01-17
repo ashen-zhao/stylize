@@ -200,6 +200,16 @@ class StylizeTests: XCTestCase {
         checkAttributeInRange(NSAttachmentAttributeName, style: style)
     }
 
+    func testExpandIsAdded() {
+        let style = Stylize.expand(1)
+        checkAttribute(NSExpansionAttributeName, style: style)
+    }
+
+    func testExpandIsAddedToRange() {
+        let style = Stylize.expand(1, range: range)
+        checkAttributeInRange(NSExpansionAttributeName, style: style)
+    }
+
     func testStylesAreComposed() {
         let baseline = Stylize.baseline(1)
         let kern = Stylize.kern(1)
