@@ -110,3 +110,4 @@ let styledString    = style(string)
 | NSStrokeColorAttributeName | `stroke(color: UIColor)` |
 | NSTextEffectAttributeName | `letterpress()` |
 | NSFontAttributeName | `font(font: UIFont)` |
+| NSLigatureAttributeName | `ligatures(enabled: Bool)` |

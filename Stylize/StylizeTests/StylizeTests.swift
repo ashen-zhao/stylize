@@ -170,6 +170,16 @@ class StylizeTests: XCTestCase {
         checkAttributeInRange(NSFontAttributeName, style: style)
     }
 
+    func testLigaturesAreAdded() {
+        let style = Stylize.ligatures(true)
+        checkAttribute(NSLigatureAttributeName, style: style)
+    }
+
+    func testLigaturesAreAddedToRange() {
+        let style = Stylize.ligatures(true, range: range)
+        checkAttributeInRange(NSLigatureAttributeName, style: style)
+    }
+
     func testStylesAreComposed() {
         let baseline = Stylize.baseline(1)
         let kern = Stylize.kern(1)

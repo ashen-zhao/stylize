@@ -247,6 +247,21 @@ public class Stylize {
         }
     }
 
+    /**
+    Creates a function that will enable or disable ligatures in an attributed string
+
+    :param: enabled true for ligatures false for none, if the font supports it
+    :param: range   Optional range of the ligatures, an invalid range will result
+                    in the ligatures being applied to the entire string
+
+    :returns: Function that can be called to enable or disable ligatures in an attributed string
+    */
+    public class func ligatures(enabled: Bool, range: NSRange = EmptyRange) -> StringStyle {
+        return { string in
+            return self.apply(NSLigatureAttributeName, value: NSNumber(bool: enabled), range: range)(string)
+        }
+    }
+
     // MARK: Compose
 
     /**
