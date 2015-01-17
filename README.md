@@ -114,3 +114,4 @@ let styledString    = style(string)
 | NSObliquenessAttributeName | `obliqueness(skew: NSNumber)` |
 | NSAttachmentAttributeName | `attachment(attachement: NSTextAttachment)` |
 | NSExpansionAttributeName | `expand(log: NSNumber)` |
+| NSWritingDirectionAttributeName | `direction(direction: WritingDirection` |

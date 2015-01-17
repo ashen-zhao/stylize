@@ -210,6 +210,16 @@ class StylizeTests: XCTestCase {
         checkAttributeInRange(NSExpansionAttributeName, style: style)
     }
 
+    func testDirectionIsAdded() {
+        let style = Stylize.direction(WritingDirection.RightToLeftEmbedding)
+        checkAttribute(NSWritingDirectionAttributeName, style: style)
+    }
+
+    func testDirectionIsAddedToRange() {
+        let style = Stylize.direction(WritingDirection.RightToLeftEmbedding, range: range)
+        checkAttributeInRange(NSWritingDirectionAttributeName, style: style)
+    }
+
     func testStylesAreComposed() {
         let baseline = Stylize.baseline(1)
         let kern = Stylize.kern(1)

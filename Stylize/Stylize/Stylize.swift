@@ -13,6 +13,21 @@ public typealias AttributeName     = String
 public typealias AttributeValue    = AnyObject
 public typealias StringStyle       = NSAttributedString -> NSAttributedString
 
+/**
+Writing direction for NSWritingDirectionAttributeName
+
+- LeftToRightEmbedding: NSWritingDirectionLeftToRight | NSTextWritingDirectionEmbedding
+- RightToLeftEmbedding: NSWritingDirectionRightToLeft | NSTextWritingDirectionEmbedding
+- LeftToRightOverride:  NSWritingDirectionLeftToRight | NSTextWritingDirectionOverride
+- RightToLeftOverride:  NSWritingDirectionRightToLeft | NSTextWritingDirectionOverride
+*/
+public enum WritingDirection: NSNumber {
+    case LeftToRightEmbedding   = 0
+    case RightToLeftEmbedding   = 1
+    case LeftToRightOverride    = 2
+    case RightToLeftOverride    = 3
+}
+
 /// An empty range with no location
 let EmptyRange = NSMakeRange(NSNotFound, 0)
 
@@ -304,6 +319,21 @@ public class Stylize {
     public class func expand(log: NSNumber, range: NSRange = EmptyRange) -> StringStyle {
         return { string in
             return self.apply(NSExpansionAttributeName, value: log, range: range)(string)
+        }
+    }
+
+    /**
+    Creates a function that will alter the writing direction of an attributed string
+
+    :param: direction The writing direction to apply
+    :param: range     Optional range of the writing direction, an invalid range will result
+                      in the writing direction being applied to the entire string
+
+    :returns: Function that can be called to alter the writing direction of an attributed string
+    */
+    public class func direction(direction: WritingDirection, range: NSRange = EmptyRange) -> StringStyle {
+        return { string in
+            return self.apply(NSWritingDirectionAttributeName, value: direction.rawValue, range: range)(string)
         }
     }
 
