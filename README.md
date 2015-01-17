@@ -112,3 +112,4 @@ let styledString    = style(string)
 | NSFontAttributeName | `font(font: UIFont)` |
 | NSLigatureAttributeName | `ligatures(enabled: Bool)` |
 | NSObliquenessAttributeName | `obliqueness(skew: NSNumber)` |
+| NSAttachmentAttributeName | `attachment(attachement: NSTextAttachment)` |

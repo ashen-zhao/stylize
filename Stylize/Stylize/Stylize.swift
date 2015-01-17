@@ -277,6 +277,21 @@ public class Stylize {
         }
     }
 
+    /**
+    Creates a function that will attach a text attachement to an attributed string
+
+    :param: attachement The attachement to attach
+    :param: range   Optional range of the attachement, an invalid range will result
+                    in the attachement being applied to the entire string
+
+    :returns: Function that can be called to attach an attachement an attributed string
+    */
+    public class func attachment(attachement: NSTextAttachment, range: NSRange = EmptyRange) -> StringStyle {
+        return { string in
+            return self.apply(NSAttachmentAttributeName, value: attachement, range: range)(string)
+        }
+    }
+
     // MARK: Compose
 
     /**

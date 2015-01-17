@@ -190,6 +190,16 @@ class StylizeTests: XCTestCase {
         checkAttributeInRange(NSObliquenessAttributeName, style: style)
     }
 
+    func testAttachementIsAdded() {
+        let style = Stylize.attachment(NSTextAttachment())
+        checkAttribute(NSAttachmentAttributeName, style: style)
+    }
+
+    func testAttachementIsAddedToRange() {
+        let style = Stylize.attachment(NSTextAttachment(), range: range)
+        checkAttributeInRange(NSAttachmentAttributeName, style: style)
+    }
+
     func testStylesAreComposed() {
         let baseline = Stylize.baseline(1)
         let kern = Stylize.kern(1)
