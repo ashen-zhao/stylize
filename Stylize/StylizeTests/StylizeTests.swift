@@ -8,7 +8,7 @@
 
 import UIKit
 import XCTest
-import Stylize
+@testable import Stylize
 
 class StylizeTests: XCTestCase {
 
