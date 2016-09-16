@@ -61,12 +61,12 @@ class StylizeTests: XCTestCase {
     }
 
     func testLinkIsAdded() {
-        let style = Stylize.link(URL(string: "")!)
+        let style = Stylize.link(URL(string: "http://google.com")!)
         checkAttribute(NSLinkAttributeName, style: style)
     }
 
     func testLinkIsAddedToARange() {
-        let style = Stylize.link(URL(string: "")!, range: range)
+        let style = Stylize.link(URL(string: "http://google.com")!, range: range)
         checkAttributeInRange(NSLinkAttributeName, style: style)
     }
 
