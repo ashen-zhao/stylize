@@ -2,4 +2,4 @@ language: objective-c
 osx_image: xcode8
 
 script:
-- xctool -workspace Stylize.xcworkspace -scheme Stylize -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO build test
+- xcodebuild -workspace Stylize.xcworkspace -scheme Stylize -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest' build test
